@@ -146,7 +146,7 @@ const Footer: React.FC<Props> = ({ settings }) => {
             {['Privacy', 'Terms', 'Cookies'].map(l => (
               <a key={l} href="#" className="text-[11px] text-muted hover:text-cream transition-colors">{l}</a>
             ))}
-            <a href="/admin/login" className="text-[11px] text-gold hover:text-cream transition-colors font-semibold">Admin Portal</a>
+            <a href="#/admin/login" className="text-[11px] text-gold hover:text-cream transition-colors font-semibold">Admin Portal</a>
           </div>
         </div>
       </div>
