@@ -1,4 +1,5 @@
 import mongoose from 'mongoose';
+import { checkAndSeed } from './autoSeed.js';
 
 const connectDB = async () => {
   try {
@@ -6,6 +7,9 @@ const connectDB = async () => {
     console.log(`Attempting to connect to MongoDB...`);
     const conn = await mongoose.connect(connString);
     console.log(`MongoDB Connected: ${conn.connection.host}`);
+    
+    // Run automatic seeding if DB is empty
+    await checkAndSeed();
   } catch (error) {
     console.error(`Error connecting to MongoDB: ${error.message}`);
     process.exit(1);
